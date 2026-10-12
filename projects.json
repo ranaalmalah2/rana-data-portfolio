@@ -1,0 +1,309 @@
+{
+  "smartmentor": {
+    "title": "SmartMentor — Job Market Analytics",
+    "date": "July 2026 · Graduation Project · A+ (High Distinction)",
+    "intro": "Which technology career should a student pursue, and which skills are worth learning first? For my July 2026 graduation project, awarded A+ (High Distinction), I developed the SmartMentor job-market analytics module to turn an Egyptian technology survey into role-based career guidance rather than generic advice.",
+    "objective": "Reduce the gap between students’ assumptions and employer-relevant career skills by making role demand, tools, salary and working arrangements understandable.",
+    "source": "Egyptian Tech Scene 2024 (EgyTech FYI), survey-based dataset. Report describes 1,729 responses, about 1,650 valid and roughly 1,200 verified responses; these are survey statistics, not job-posting counts.",
+    "tools": [
+      "Power BI Desktop",
+      "Power Query",
+      "DAX",
+      "Dimensional data modeling"
+    ],
+    "challenges": [
+      [
+        "Wide survey columns",
+        "Languages, frameworks, databases, cloud platforms and technologies were spread across repeated columns (e.g. Language 1–9 and Technology 1–14).",
+        "Unpivoted attribute groups into dedicated skill tables keyed by respondent."
+      ],
+      [
+        "Sparse and inconsistent values",
+        "Blank skill entries and inconsistent whitespace or labels would distort frequency rankings.",
+        "Removed blanks/nulls, used Trim/Clean and standardized text and types."
+      ],
+      [
+        "Fragmented salary and engineering tables",
+        "Skills, respondent details and salaries required a coherent filtering model.",
+        "Created Engineering_Master, skill tables and Dim_Title, then defined model relationships."
+      ]
+    ],
+    "design": "Role-centric dashboard views with filters, salary comparisons, work-setting analysis, language/framework/database popularity and role-specific recommendations. DAX supports dynamic market KPIs.",
+    "insights": [
+      [
+        "Survey evidence, not job-posting demand",
+        "The source describes 1,729 responses, around 1,650 valid and roughly 1,200 verified. Results reflect surveyed professionals; they should not be described as a count of open vacancies."
+      ],
+      [
+        "Skills become useful when viewed in career context",
+        "The normalized language, framework, cloud and database tables allow users to explore technologies alongside role and experience instead of relying on a single overall popularity ranking."
+      ],
+      [
+        "Salary comparisons need segmentation",
+        "Salary should be interpreted by role and experience level; a cross-market average would conceal meaningful differences."
+      ],
+      [
+        "Career guidance can account for work setting",
+        "Remote, hybrid and office patterns can help students compare expectations across paths without guaranteeing a particular arrangement."
+      ]
+    ],
+    "impact": "SmartMentor makes career exploration more evidence-based by connecting roles, skills, compensation and work settings in one interface. The A+ grade recognizes the graduation project; no measured employment improvement is claimed.",
+    "images": [
+      "smartmentor-1.webp"
+    ]
+  },
+  "sales": {
+    "title": "Product & Sales Analysis Warehouse",
+    "date": "May 2025 · Approximate portfolio timeline",
+    "intro": "The central question in this warehouse project was not “Which channel sells more?” but “Which channel creates more value?” Working with Microsoft AdventureWorksDW2022, I followed the data from SQL Server extraction and modeling to Power BI comparisons of internet and reseller revenue, profitability, product concentration and geography.",
+    "objective": "Understand revenue, profit, product mix and regional performance across internet and reseller sales channels.",
+    "source": "Microsoft AdventureWorksDW2022 backup restored in SQL Server Management Studio. Core sources include FactInternetSales, FactResellerSales, DimCustomer, DimProduct, DimSalesTerritory and DimDate.",
+    "tools": [
+      "SQL Server",
+      "SSMS",
+      "SQL Views and Joins",
+      "Power BI",
+      "DAX",
+      "Dimensional Modeling"
+    ],
+    "challenges": [
+      [
+        "Multiple fact and dimension tables",
+        "Sales facts, product attributes, customers and regions were separated across warehouse tables.",
+        "Built base and integrated SQL views to connect analysis-ready data."
+      ],
+      [
+        "Expensive repeated aggregation",
+        "Channel and regional summaries required consistent reporting logic.",
+        "Designed pre-aggregated views and indexes as described in the project presentation."
+      ],
+      [
+        "Revenue versus profit interpretation",
+        "High sales can mask poor channel economics.",
+        "Compared channel revenue against net profit and assessed profitability separately."
+      ]
+    ],
+    "design": "Multi-page Power BI report: executive sales overview, internet channel, reseller channel and supporting product/customer/regional breakdowns.",
+    "insights": [
+      [
+        "Internet sales: $29.36M; net profit: approximately $9M",
+        "The online channel shows materially stronger profitability; prioritize profitable growth and retention."
+      ],
+      [
+        "Reseller sales: $77.55M; net profit: approximately $1.01M",
+        "Large reseller revenue produces comparatively little profit; review cost drivers, contracts and discounts."
+      ],
+      [
+        "Bikes dominate both channels",
+        "Diversify into accessories, clothing and components to reduce product concentration."
+      ],
+      [
+        "The United States leads online and reseller sales",
+        "Test opportunities in less-developed markets to reduce geographic concentration."
+      ]
+    ],
+    "impact": "The channel contrast provides a concrete starting point for margin reviews, reseller pricing discussions and product-mix planning. The dashboard recommends actions; it does not claim those commercial changes were executed.",
+    "images": [
+      "sales-1.webp",
+      "sales-2.webp",
+      "sales-3.webp",
+      "sales-4.webp"
+    ]
+  },
+  "finance": {
+    "title": "Finance & Investment Preferences",
+    "date": "Sep 2025 · Approximate portfolio timeline",
+    "intro": "A finance survey is easy to chart and easy to overinterpret. This case study starts with the 40 people actually surveyed, then explores how their investment habits, preferred products and information sources differ. The goal is a useful audience profile—not a claim about every investor.",
+    "objective": "Explore whether the participants invest, how they learn about investment options, and which goals and time horizons shape their preferences.",
+    "source": "Finance Dashboard PDF, four pages. Underlying raw dataset and cleaning log were not supplied. Data-preparation specifics cannot be verified without the underlying PBIX or dataset.",
+    "tools": [
+      "Power BI (confirmed by screenshots)"
+    ],
+    "challenges": [
+      [
+        "A small, uneven sample",
+        "Only 40 participants appear in the report; 25 are male and 15 female. Findings cannot safely be generalized to a wider population.",
+        "Kept the participant count and gender distribution prominent, and interpreted every percentage as a within-sample result."
+      ],
+      [
+        "Different investment questions need different comparisons",
+        "Participation, saving goals, expected returns and preferred investment instruments answer distinct questions.",
+        "Organized separate report views for participation, age-related preferences, savings objectives and knowledge sources. Raw-data cleaning steps are not available in the supplied PDF."
+      ]
+    ],
+    "design": "The opening page establishes the sample with participant and investor cards. Later pages move from who participates to why they invest, how long they intend to invest, which instruments they prefer and where they learn about them. This separates audience context from behavioral comparisons.",
+    "insights": [
+      [
+        "37 of 40 respondents report investing (92.5%)",
+        "Within this survey, investing is common. A practical next step would be to segment educational content by investment goals rather than assume beginners dominate."
+      ],
+      [
+        "25 respondents are male and 15 female",
+        "Any gender comparison needs to show the uneven base sizes; the sample cannot support broad population claims."
+      ],
+      [
+        "16 of 40 participants cite the internet as an information source (40%)",
+        "Digital explainers could be a useful channel for this group, ideally paired with checks on information quality."
+      ]
+    ],
+    "impact": "A possible decision is to pilot online financial-literacy material aimed at the needs visible in this sample, then validate it with a larger, more representative survey. No campaign outcome is claimed.",
+    "images": [
+      "finance-1.webp",
+      "finance-2.webp",
+      "finance-3.webp",
+      "finance-4.webp"
+    ]
+  },
+  "traffic": {
+    "title": "Traffic Accidents & Road Safety",
+    "date": "Feb 2026 · Approximate portfolio timeline",
+    "intro": "The busiest crash category is not automatically the most dangerous. This road-safety dashboard separates incident frequency from injury severity and looks at when crashes occur and under which roadway, lighting and weather conditions.",
+    "objective": "Identify descriptive patterns that could help safety teams decide where to investigate first, without claiming that the charts establish accident causes.",
+    "source": "Traffic Accidents Power BI PDF, two pages. Dataset provenance and transformation steps were not included. Data-preparation specifics cannot be verified without the underlying PBIX or dataset.",
+    "tools": [
+      "Power BI (confirmed by screenshots)"
+    ],
+    "challenges": [
+      [
+        "Crash categories compete for attention",
+        "The report includes many collision types, contributing causes and road layouts, making a single ranking inadequate.",
+        "Used separate breakdowns for crash type, contributing cause, roadway, weather and lighting, plus an injury-by-hour trend. Original transformations are not documented."
+      ],
+      [
+        "Frequency is not the same as risk",
+        "A common road type can have more crashes simply because more vehicles use it.",
+        "Interpreted the charts as signals for audits; traffic volume, distance traveled and exposure would be needed for normalized risk comparisons."
+      ]
+    ],
+    "design": "The first page combines injury KPIs with time-of-day severity and collision-type charts. The second shifts toward conditions: primary contributing cause, roadway configuration, lighting, weather and number of involved units.",
+    "insights": [
+      [
+        "The report displays approximately 80K total injuries and 389 fatal injuries",
+        "These totals show the importance of separating severe outcomes from overall incident volume; the underlying reporting period is not supplied."
+      ],
+      [
+        "The displayed average is 15.73 accidents per day",
+        "This is a descriptive KPI; a dated incident series is needed before making seasonal or trend claims."
+      ],
+      [
+        "Turning, angle and rear-end categories are prominent in the collision chart",
+        "Prioritize a review of junction and following-distance conditions, then validate with location-specific records."
+      ]
+    ],
+    "impact": "Potential next steps include selecting locations for safety audits and combining the data with exposure measures. The report does not document implemented road changes or measured reductions.",
+    "images": [
+      "traffic-1.webp",
+      "traffic-2.webp"
+    ]
+  },
+  "hotel": {
+    "title": "Hotel Booking & Cancellation Analytics",
+    "date": "Apr 2026 · Approximate portfolio timeline",
+    "intro": "A hotel can fill its booking pipeline and still lose a large share of expected stays. This project looks past reservation volume to examine cancellations, distribution dependence, pricing and stay duration—four levers that matter to revenue planning.",
+    "objective": "Understand the gap between bookings and potential realized stays, then identify which hotel types, channels and booking conditions merit closer commercial review.",
+    "source": "Hotel Booking Power BI PDF, three pages. Source dataset and transformation documentation not supplied. Data-preparation specifics cannot be verified without the underlying PBIX or dataset.",
+    "tools": [
+      "Power BI (confirmed by screenshots)"
+    ],
+    "challenges": [
+      [
+        "Booking volume can disguise cancellation exposure",
+        "A reservation is not guaranteed occupied demand; cancellation patterns vary with booking conditions.",
+        "Compared cancellation measures across hotel type, deposit type and lead time rather than treating all reservations as realized revenue. The PDF does not document source-data cleaning."
+      ],
+      [
+        "Channel concentration can create commercial dependence",
+        "A large share of bookings comes through the travel-agent/tour-operator segment.",
+        "Placed channel mix next to pricing and cancellation visuals to identify what needs further commission and conversion analysis."
+      ]
+    ],
+    "design": "Page one communicates scale, average daily rate, cancellation rate and stay length. Page two explores hotel type, distribution channels, deposit rules and monthly ADR. Page three connects ADR with lead time, waiting lists and customer-type stay patterns.",
+    "insights": [
+      [
+        "119.39K reservations with a 37.04% cancellation rate",
+        "A high cancellation share makes cancellation forecasting and policy testing more relevant than booking counts alone."
+      ],
+      [
+        "TA/TO represents 81.98% of the channel distribution shown",
+        "Investigate commission exposure and channel-specific cancellation behavior before changing the distribution mix."
+      ],
+      [
+        "City hotels represent 66.45% of reservations versus 33.55% for resort hotels",
+        "Evaluate pricing and demand patterns separately for each hotel type rather than applying one revenue strategy."
+      ],
+      [
+        "ADR is 101.83 and average stay is 3.43 days",
+        "Test rate and length-of-stay offers together; the source does not establish the ADR currency."
+      ]
+    ],
+    "impact": "A hotel revenue team could prioritize cancellation analysis by channel and deposit policy, then run controlled pricing or booking-policy tests. No actual increase in revenue is claimed.",
+    "images": [
+      "hotel-1.webp",
+      "hotel-2.webp",
+      "hotel-3.webp"
+    ]
+  },
+  "hr": {
+    "title": "Human Resources Workforce Analytics",
+    "date": "Nov 2025 · Approximate portfolio timeline",
+    "intro": "Hiring reports become more useful when they connect where employees came from with what happens after recruitment. This dashboard brings sourcing, workforce status, salary and performance into one view, while avoiding simplistic conclusions from salary alone.",
+    "objective": "Create an overview of workforce composition and recruiting sources, with enough departmental context to guide follow-up HR questions.",
+    "source": "Human Resources Report Power BI PDF, one page. No underlying data preparation documentation supplied. Data-preparation specifics cannot be verified without the underlying PBIX or dataset.",
+    "tools": [
+      "Power BI (confirmed by screenshot)"
+    ],
+    "challenges": [
+      [
+        "Recruitment channels are not the same as recruitment quality",
+        "A source with more hires may also have higher cost or turnover, neither of which is measured here.",
+        "Compared headcounts by source and kept cost-per-hire and retention as recommended future metrics, not invented results."
+      ],
+      [
+        "Pay figures require context",
+        "Minimum and maximum salaries can hide differences in job family, seniority and department.",
+        "Presented pay alongside position, performance and department views; original data-cleaning and salary-unit definitions are not supplied."
+      ]
+    ],
+    "design": "The dashboard places employee count and salary range above recruitment-source and employment-status distributions. Salary-by-position and performance-score comparisons sit beside a department slicer so a recruiter can move from organization-wide totals to a focused review.",
+    "insights": [
+      [
+        "311 employees are represented",
+        "This is the reporting base for the visible workforce charts, not a claim about a larger organization."
+      ],
+      [
+        "Indeed accounts for 87 employees (27.97%); LinkedIn for 76 (24.44%)",
+        "Together these sources represent 163 of 311 records. Compare subsequent retention and hiring cost before allocating additional budget."
+      ],
+      [
+        "Displayed salary minimum and maximum are 45K and 250K",
+        "The range indicates substantial variation, but without confirmed currency, period and role mix it cannot establish pay inequity."
+      ]
+    ],
+    "impact": "The report supports a recruitment-channel audit and targeted workforce questions. It does not show that hiring spend, retention or compensation decisions were changed.",
+    "images": [
+      "hr-1.webp"
+    ]
+  },
+  "printer": {
+    "title": "Arduino-Based 3D Printer",
+    "date": "2023 · First-year university coursework",
+    "intro": "A first-year university course project (2023) exploring an Arduino-based 3D printer as an introductory hardware-and-software integration exercise.",
+    "objective": "Complete a first-year course assignment that introduces the coordination of electronic control and mechanical components in a 3D-printing concept.",
+    "source": "First-year university coursework, 2023. Project-specific technical report and test records were not provided.",
+    "tools": [
+      "Arduino",
+      "Embedded systems fundamentals"
+    ],
+    "challenges": [
+      [
+        "Technical implementation not documented",
+        "A full component list, failure log and test results were not supplied.",
+        "Add documented challenges and solutions once project files are available."
+      ]
+    ],
+    "design": "Course project, not a data analytics dashboard. It is presented separately to illustrate early technical exploration.",
+    "insights": [],
+    "impact": "An introductory academic course project demonstrating early interest in connecting hardware and software; measured results are not documented.",
+    "images": []
+  }
+}
